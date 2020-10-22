@@ -44,7 +44,7 @@ Check status:
 
     sudo systemctl status docker
     
-###### Executing the Docker Command Without Sudo
+##### Executing the Docker Command Without Sudo
 
 add your username to the docker group:
 
