@@ -45,6 +45,7 @@ Check status:
     sudo systemctl status docker
     
 ###### Executing the Docker Command Without Sudo
+
 add your username to the docker group:
 
     sudo usermod -aG docker ${USER}
@@ -66,6 +67,7 @@ To view system-wide information about Docker, use:
     docker info
     
 ##### Install docker-compose Linux
+
 Run this command to download the current stable release of Docker Compose:
 
     sudo curl -L "https://github.com/docker/compose/releases/download/1.27.4/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
