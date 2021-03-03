@@ -83,3 +83,54 @@ Test the installation:
 
     $ docker-compose --version
     docker-compose version 1.27.4, build 1110ad01
+
+Connection Refused problem from local domain(solution):
+-------------------------------------------------------
+Go to
+```
+laradock
+   |_docker-compose.yml
+         |_NGINX Server
+```
+Add local domain as ***aliases***
+```
+### NGINX Server #########################################
+    nginx:
+      build:
+        context: ./nginx
+        args:
+          - CHANGE_SOURCE=${CHANGE_SOURCE}
+          - PHP_UPSTREAM_CONTAINER=${NGINX_PHP_UPSTREAM_CONTAINER}
+          - PHP_UPSTREAM_PORT=${NGINX_PHP_UPSTREAM_PORT}
+          - http_proxy
+          - https_proxy
+          - no_proxy
+      volumes:
+        - ${APP_CODE_PATH_HOST}:${APP_CODE_PATH_CONTAINER}${APP_CODE_CONTAINER_FLAG}
+        - ${NGINX_HOST_LOG_PATH}:/var/log/nginx
+        - ${NGINX_SITES_PATH}:/etc/nginx/sites-available
+        - ${NGINX_SSL_PATH}:/etc/nginx/ssl
+      ports:
+        - "${NGINX_HOST_HTTP_PORT}:80"
+        - "${NGINX_HOST_HTTPS_PORT}:443"
+        - "${VARNISH_BACKEND_PORT}:81"
+      depends_on:
+        - php-fpm
+      networks:
+        frontend:
+          aliases:
+            - house.test
+            - auth-passport.test
+            - crm.test
+            - payment.test
+        backend:
+          aliases:
+            - house.test
+            - auth-passport.test
+            - crm.test
+            - payment.test
+```
+```
+sudo docker-compose build --no-cache nginx
+```
+Done !
