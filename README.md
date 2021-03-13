@@ -1,7 +1,7 @@
 # Docker
 Install docker
 
-Find & Kill using port:
+Find & Kill allocated port:
 ---------------------
 ```
 sudo lsof -i -P -n | grep 8081
