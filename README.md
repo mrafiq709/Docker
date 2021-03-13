@@ -1,6 +1,13 @@
 # Docker
 Install docker
 
+Find & Kill using port:
+---------------------
+```
+sudo lsof -i -P -n | grep 8081
+kill -9 <process id>
+```
+
 # Docker Linux
 update your existing list of packages:
 
