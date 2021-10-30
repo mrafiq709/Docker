@@ -151,9 +151,14 @@ npm run dev
 ```
 cat /etc/passwd
 ```
+```
 output contain:
+
 sshd:x:105:65534::/run/sshd:/usr/sbin/nologin
-laradock:x:1000:1000::/home/**laradock**:/bin/bash
+
+laradock:x:1000:1000::/home/laradock:/bin/bash
+```
+
 ```
 su laradock
 npm run dev
