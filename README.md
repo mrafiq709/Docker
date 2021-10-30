@@ -141,3 +141,25 @@ Add local domain as ***aliases***
 sudo docker-compose build --no-cache nginx
 ```
 Done !
+
+Laravel Mix Error
+-------------------
+```
+npm run dev
+```
+<a href="https://imgur.com/wP2YOau"><img src="https://i.imgur.com/wP2YOau.png" title="source: imgur.com" /></a><br/><br/>
+```
+cat /etc/passwd
+```
+output contain:
+sshd:x:105:65534::/run/sshd:/usr/sbin/nologin
+laradock:x:1000:1000::/home/**laradock**:/bin/bash
+```
+su laradock
+npm run dev
+```
+<a href="https://imgur.com/xuq2F7h"><img src="https://i.imgur.com/xuq2F7h.png" title="source: imgur.com" /></a><br/><br/>
+```
+export NODE_OPTIONS=--openssl-legacy-provider
+npm run dev
+```
