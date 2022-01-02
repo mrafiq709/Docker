@@ -166,5 +166,6 @@ npm run dev
 <a href="https://imgur.com/xuq2F7h"><img src="https://i.imgur.com/xuq2F7h.png" title="source: imgur.com" /></a><br/><br/>
 ```
 export NODE_OPTIONS=--openssl-legacy-provider
+
 npm run dev
 ```
