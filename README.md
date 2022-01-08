@@ -170,3 +170,9 @@ export NODE_OPTIONS=--openssl-legacy-provider
 ```
 npm run dev
 ```
+
+import sql
+-------------
+```
+docker exec -i mysql_container mysql -uroot -psecret mysql_db_name < db.sql
+```
